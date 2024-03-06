@@ -31,6 +31,7 @@ const choiceButtons = document.querySelectorAll(".choice-btn");
 const gameDiv = document.querySelector(".game");
 const resultsDiv = document.querySelector(".results");
 const resultDivs = document.querySelectorAll(".results__result");
+const closeBtn = document.querySelector(".close-button");
 
 const resultWinner = document.querySelector(".results__winner");
 const resultText = document.querySelector(".results__text");
@@ -55,6 +56,8 @@ choiceButtons.forEach((button) => {
         const choiceName = button.dataset.choice;
         const choice = CHOICES.find((choice) => choice.name === choiceName);
         choose(choice);
+        closeBtn.style.top = "-15.4rem";
+
     });
 });
 
@@ -127,6 +130,7 @@ playAgainBtn.addEventListener("click", () => {
     gameDiv.classList.toggle("hidden");
     resultsDiv.classList.toggle("hidden");
     nextBtn.style.display = 'none';
+    closeBtn.style.top = "-21rem";
 
     resultDivs.forEach((resultDiv) => {
         resultDiv.innerHTML = "";
